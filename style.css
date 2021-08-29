@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
 * {
   box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
 }
 
 body {
@@ -13,28 +16,34 @@ header {
   background-repeat: no-repeat;
   background-position: left;
   background-size: cover;
-  min-height: 60vh;
-  padding: 50px 0;
+  height: 60vh;
+  max-height: 400px;
+  padding: 10px 0;
 }
 .hero {
   background-image: url(images/pattern-circles.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 150px;
-  padding: 50px 0;
+  padding: 50px 20px;
 }
 
 .card {
-  width: 80%;
+  width: 90%;
   max-width: 600px;
   background-color: white;
   margin: 0px auto;
   margin-top: -80px;
+  margin-bottom: 80px;
   border-radius: 10px;
   text-align: center;
-  padding: 30px;
+  padding: 15px;
   box-shadow: 3px 5px 5px 0px rgba(0, 0, 0, 0.4),
     -3px 0px 5px 0px rgba(0, 0, 0, 0.4);
+}
+.card > h5 {
+  margin-bottom: 30px;
+  color: rgb(150, 150, 150);
 }
 
 .slidecontainer {
@@ -73,6 +82,8 @@ header {
   display: inline-block;
   width: 50px;
   height: 26px;
+  grid-area: switch;
+  justify-self: center;
 }
 .switch input {
   opacity: 0;
@@ -89,6 +100,7 @@ header {
   background-color: #ccc;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  width: 100%;
 }
 .slider:before {
   position: absolute;
@@ -97,20 +109,18 @@ header {
   width: 20px;
   left: 4px;
 
-  bottom: 2.8px;
+  bottom: 3px;
   background-color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: hsl(174, 86%, 45%);
 }
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 1px hsl(174, 86%, 45%);
 }
 input:checked + .slider:before {
-  /* -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px); */
   transform: translateX(22px);
 }
 .slider.round {
@@ -118,6 +128,67 @@ input:checked + .slider:before {
 }
 .slider.round:before {
   border-radius: 50%;
+}
+
+.amount {
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.amount > span {
+  font-size: 16px;
+  color: rgb(150, 150, 150);
+}
+
+.discount-section {
+  display: grid;
+  align-items: center;
+  grid-template-areas: 'p1 switch switch p2';
+  margin: 30px 0;
+}
+.discount-section > p {
+  color: rgb(150, 150, 150);
+  font-size: 15px;
+  margin: 5px;
+}
+.p1 {
+  justify-self: end;
+  grid-area: p1;
+}
+.p2 {
+  justify-self: start;
+  grid-area: p2;
+}
+
+.discount-section > .p2 > span {
+  background-color: hsl(14, 92%, 95%);
+  padding: 4px 8px;
+  border-radius: 30px;
+  font-size: 12px;
+  color: hsl(15, 100%, 70%);
+}
+
+ul {
+  list-style-type: none;
+  margin: 15px 0;
+  padding: 0;
+}
+li {
+  margin: 10px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  margin: 20px 0;
+  padding: 8px 16px;
+  background-color: hsl(227, 35%, 25%);
+  color: hsl(226, 100%, 87%);
+  border-radius: 30px;
+}
+.btn:hover {
+  color: white;
 }
 
 .attribution {
